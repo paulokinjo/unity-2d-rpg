@@ -11,6 +11,11 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
+        if ((Input.GetKeyDown(KeyCode.Q)))
+        {
+            StateMachine.ChangeState(Player.CounterAttackState);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && Player.IsGroundDetected)
         {
             StateMachine.ChangeState(Player.JumpState);
@@ -21,7 +26,7 @@ public class PlayerGroundedState : PlayerState
             StateMachine.ChangeState(Player.PrimaryAttackState);
         }
 
-        if(!Player.IsGroundDetected)
+        if (!Player.IsGroundDetected)
         {
             StateMachine.ChangeState(Player.AirState);
         }

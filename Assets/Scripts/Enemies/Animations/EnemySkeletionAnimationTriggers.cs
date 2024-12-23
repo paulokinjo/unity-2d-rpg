@@ -19,4 +19,8 @@ public class EnemySkeletionAnimationTriggers : MonoBehaviour
             }
         }
     }
+
+    private void OpenCounterAttackWindow() => _enemy?.OpenCounterAttackWindow();
+
+    private void CloseCounterAttackWindow() => _enemy.CloseCounterAttackWindow();
 }

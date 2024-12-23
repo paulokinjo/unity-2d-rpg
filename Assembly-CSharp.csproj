@@ -66,10 +66,12 @@
     <Compile Include="Assets\Scripts\Enemies\SkeletonIdleState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySkeleton.cs" />
     <Compile Include="Assets\Scripts\Players\PlayerWallJumpState.cs" />
+    <Compile Include="Assets\Scripts\Players\PlayerCounterAttackState.cs" />
     <Compile Include="Assets\Scripts\Players\PlayerMoveState.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\Players\PlayerGroundedState.cs" />
     <Compile Include="Assets\Scripts\Enemies\SkeletonMoveState.cs" />
+    <Compile Include="Assets\Scripts\Enemies\SkeletonStunnedState.cs" />
     <Compile Include="Assets\Scripts\EntityFX.cs" />
     <Compile Include="Assets\Scripts\Enemies\SkeletonGroundedState.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />

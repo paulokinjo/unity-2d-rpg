@@ -4,6 +4,7 @@ public class Player : Entity
 {
     [Header("Attack Info")]
     [SerializeField] private Vector2[] attackMovement;
+    [SerializeField] private float _counterAttackDuration = .2f;
 
     [Header("Move Info")]
     [SerializeField] private float moveSpeed = 12f;
@@ -36,6 +37,8 @@ public class Player : Entity
 
     public PlayerPrimaryAttackState PrimaryAttackState { get; private set; }
 
+    public PlayerCounterAttackState CounterAttackState { get; private set; }
+
     public bool IsBusy { get; private set; }
 
     public float MoveSpeed => moveSpeed;
@@ -45,6 +48,8 @@ public class Player : Entity
     public float DashSpeed => dashSpeed;
 
     public float DashDuration => dashDuration;
+
+    public float CounterAttackDuration => _counterAttackDuration;
 
     public Vector2[] AttackMovement => attackMovement;
 
@@ -71,6 +76,7 @@ public class Player : Entity
         WallSlideState = new(this, StateMachine, "WallSlide");
         WallJumpState = new(this, StateMachine, "Jump");
         PrimaryAttackState = new(this, StateMachine, "Attack");
+        CounterAttackState = new(this, StateMachine, "CounterAttack");
     }
 
     protected override void Start()
