@@ -13,9 +13,6 @@ public class Player : Entity
     [Header("Dash Info")]
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashDuration = 1.5f;
-    [SerializeField] private float dashCoolDown = 1.5f;
-
-    private float DashTimer;
 
     public float DashDirection { get; private set; } = 1f;
 
@@ -98,11 +95,9 @@ public class Player : Entity
             return;
         }
 
-        DashTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && DashTimer < 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill())
         {
-            DashTimer = dashCoolDown;
 
             DashDirection = Input.GetAxisRaw("Horizontal");
             if (DashDirection == 0)
